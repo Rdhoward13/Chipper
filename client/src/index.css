@@ -1167,6 +1167,10 @@ label form [type='radio'] {
   display: inline-block;
 }
 
+#navbar {display: block;
+
+}
+
 .container {
   width: 85%;
   max-width: 1200px;
@@ -1706,3 +1710,5 @@ label form [type='radio'] {
     align-content: center;
   }
 }
+
+
