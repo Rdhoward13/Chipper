@@ -73,7 +73,7 @@ const ThoughtForm = () => {
 
   return (
     <div>
-      <h3>What's on your techy mind?</h3>
+      <h3>Main content placeholder title</h3>
 
       <p
         className={`m-0 ${
@@ -90,7 +90,7 @@ const ThoughtForm = () => {
         <div className="col-12">
           <textarea
             name="postText"
-            placeholder="Here's a new thought..."
+            placeholder="Add post here:"
             value={formState.postText}
             className="form-input w-100"
             style={{ lineHeight: "1.5" }}
@@ -98,13 +98,6 @@ const ThoughtForm = () => {
           ></textarea>
         </div>
         <div className="col-12 col-lg-9">
-          <input
-            name="postAuthor"
-            placeholder="Add your name to get credit for the thought..."
-            value={formState.postAuthor}
-            className="form-input w-100"
-            onChange={handleChange}
-          />
         </div>
 
         <div className="col-12 col-lg-3">
