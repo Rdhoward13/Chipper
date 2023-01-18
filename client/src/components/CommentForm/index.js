@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
 
-import { ADD_COMMENT } from '../../utils/mutations';
+import { ADD_COMMENT } from "../../utils/mutations";
 
-const CommentForm = ({ thoughtId }) => {
-  const [commentText, setCommentText] = useState('');
+const CommentForm = ({ PostId }) => {
+  const [commentText, setCommentText] = useState("");
   const [characterCount, setCharacterCount] = useState(0);
 
   const [addComment, { error }] = useMutation(ADD_COMMENT);
@@ -14,10 +14,10 @@ const CommentForm = ({ thoughtId }) => {
 
     try {
       const { data } = await addComment({
-        variables: { thoughtId, commentText },
+        variables: { postId, commentText },
       });
 
-      setCommentText('');
+      setCommentText("");
     } catch (err) {
       console.error(err);
     }
@@ -26,7 +26,7 @@ const CommentForm = ({ thoughtId }) => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'commentText' && value.length <= 280) {
+    if (name === "commentText" && value.length <= 280) {
       setCommentText(value);
       setCharacterCount(value.length);
     }
@@ -37,7 +37,7 @@ const CommentForm = ({ thoughtId }) => {
       <h4>What are your thoughts on this thought?</h4>
       <p
         className={`m-0 ${
-          characterCount === 280 || error ? 'text-danger' : ''
+          characterCount === 280 || error ? "text-danger" : ""
         }`}
       >
         Character Count: {characterCount}/280
@@ -53,7 +53,7 @@ const CommentForm = ({ thoughtId }) => {
             placeholder="Add your comment..."
             value={commentText}
             className="form-input w-100"
-            style={{ lineHeight: '1.5' }}
+            style={{ lineHeight: "1.5" }}
             onChange={handleChange}
           ></textarea>
         </div>
