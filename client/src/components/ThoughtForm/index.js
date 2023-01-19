@@ -17,8 +17,8 @@ const ThoughtForm = () => {
         const { posts } = cache.readQuery({ query: QUERY_POST });
 
         cache.writeQuery({
-          query: QUERY_POSTS,
-          data: {posts, [addPost, posts] },
+          query: QUERY_POST,
+          data: { posts: [addPost, ...posts] }
         });
       } catch (e) {
         console.error(e);
@@ -90,7 +90,7 @@ const ThoughtForm = () => {
         <div className="col-12">
           <textarea
             name="postText"
-            placeholder="Here's a new thought..."
+            placeholder="Add post here:"
             value={formState.postText}
             className="form-input w-100"
             style={{ lineHeight: "1.5" }}

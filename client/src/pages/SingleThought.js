@@ -1,24 +1,24 @@
-import React from 'react';
+import React from "react";
 
 // Import the `useParams()` hook from React Router
-import { useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import { useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 
-import CommentList from '../components/CommentList';
-import CommentForm from '../components/CommentForm';
+import CommentList from "../components/CommentList";
+import CommentForm from "../components/CommentForm";
 
-import { QUERY_SINGLE_THOUGHT } from '../utils/queries';
+import { QUERY_SINGLE_POST } from "../utils/queries";
 
-const SingleThought = () => {
+const SinglePost = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
-  const { thoughtId } = useParams();
+  const { postId } = useParams();
 
-  const { loading, data } = useQuery(QUERY_SINGLE_THOUGHT, {
-    // Pass the `thoughtId` URL parameter into query to retrieve this thought's data
-    variables: { thoughtId: thoughtId },
+  const { loading, data } = useQuery(QUERY_SINGLE_POST, {
+    // Pass the `postId` URL parameter into query to retrieve this thought's data
+    variables: { postId: postId },
   });
 
-  const thought = data?.thought || {};
+  const post = data?.post || {};
 
   if (loading) {
     return <div>Loading...</div>;
@@ -35,24 +35,24 @@ const SingleThought = () => {
         <blockquote
           className="p-4"
           style={{
-            fontSize: '1.5rem',
-            fontStyle: 'italic',
-            border: '2px dotted #1a1a1a',
-            lineHeight: '1.5',
+            fontSize: "1.5rem",
+            fontStyle: "italic",
+            border: "2px dotted #1a1a1a",
+            lineHeight: "1.5",
           }}
         >
-          {thought.thoughtText}
+          {post.postText}
         </blockquote>
       </div>
 
       <div className="my-5">
-        <CommentList comments={thought.comments} />
+        <CommentList comments={post.comments} />
       </div>
-      <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <CommentForm thoughtId={thought._id} />
+      <div className="m-3 p-4" style={{ border: "1px dotted #1a1a1a" }}>
+        <CommentForm postId={post._id} />
       </div>
     </div>
   );
 };
 
-export default SingleThought;
+export default SinglePost;
