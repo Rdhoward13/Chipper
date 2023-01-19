@@ -1,31 +1,32 @@
-import React from 'react';
+import React from "react";
 // Import `<Link>` component from React Router for internal hyperlinks
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-const PostList = ({ posts, title }) => {
-  if (!posts.length) {
+const PostList = ({ post, title }) => {
+  console.log(post);
+  if (!post.length) {
     return <h3>No posts Yet</h3>;
   }
 
   return (
     <div>
       <h3>{title}</h3>
-      {posts &&
-        posts.map((post) => (
-          <div key={post._id} className="card mb-3">
+      {post &&
+        post.map((posts) => (
+          <div key={posts._id} className="card mb-3">
             <h4 className="card-header bg-primary text-light p-2 m-0">
-              {post.postAuthor} <br />
-              <span style={{ fontSize: '1rem' }}>
-                had this post on {post.createdAt}
+              {posts.postAuthor} <br />
+              <span style={{ fontSize: "1rem" }}>
+                had this post on {posts.createdAt}
               </span>
             </h4>
             <div className="card-body bg-light p-2">
-              <p>{post.postText}</p>
+              <p>{posts.postText}</p>
             </div>
             {/* Create a link to this post's page to view its comments using `<Link>` component */}
             <Link
               className="btn btn-primary btn-block btn-squared"
-              to={`/posts/${post._id}`}
+              to={`/posts/${posts._id}`}
             >
               Join the discussion on this post.
             </Link>
