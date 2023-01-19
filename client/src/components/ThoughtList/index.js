@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const ThoughtList = ({ thoughts, title }) => {
   if (!thoughts.length) {
-    return <h3>No Thoughts Yet</h3>;
+    return <h3>No Chirps Yet</h3>;
   }
 
   return (
@@ -16,7 +16,7 @@ const ThoughtList = ({ thoughts, title }) => {
             <h4 className="card-header bg-primary text-light p-2 m-0">
               {thought.thoughtAuthor} <br />
               <span style={{ fontSize: '1rem' }}>
-                had this thought on {thought.createdAt}
+                had this to chirp about {thought.createdAt}
               </span>
             </h4>
             <div className="card-body bg-light p-2">

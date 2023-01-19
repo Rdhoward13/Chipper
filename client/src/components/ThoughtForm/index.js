@@ -17,8 +17,8 @@ const ThoughtForm = () => {
         const { posts } = cache.readQuery({ query: QUERY_POST });
 
         cache.writeQuery({
-          query: QUERY_POST,
-          data: { posts [addPost, ...posts] },
+          query: QUERY_POSTS,
+          data: {posts, [addPost, posts] },
         });
       } catch (e) {
         console.error(e);
@@ -73,7 +73,7 @@ const ThoughtForm = () => {
 
   return (
     <div>
-      <h3>What's on your techy mind?</h3>
+      <h3>You got something to chirp about?</h3>
 
       <p
         className={`m-0 ${
@@ -100,7 +100,7 @@ const ThoughtForm = () => {
         <div className="col-12 col-lg-9">
           <input
             name="postAuthor"
-            placeholder="Add your name to get credit for the thought..."
+            placeholder="Don't forget to put your name so everyone knows..."
             value={formState.postAuthor}
             className="form-input w-100"
             onChange={handleChange}
