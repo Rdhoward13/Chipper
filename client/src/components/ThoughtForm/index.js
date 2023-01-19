@@ -73,7 +73,7 @@ const ThoughtForm = () => {
 
   return (
     <div>
-      <h3>Main content placeholder title</h3>
+      <h3>You got something to chirp about?</h3>
 
       <p
         className={`m-0 ${
@@ -98,6 +98,13 @@ const ThoughtForm = () => {
           ></textarea>
         </div>
         <div className="col-12 col-lg-9">
+          <input
+            name="postAuthor"
+            placeholder="Don't forget to put your name so everyone knows..."
+            value={formState.postAuthor}
+            className="form-input w-100"
+            onChange={handleChange}
+          />
         </div>
 
         <div className="col-12 col-lg-3">

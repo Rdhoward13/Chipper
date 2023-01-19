@@ -26,9 +26,9 @@ const SinglePost = () => {
   return (
     <div className="my-3">
       <h3 className="card-header bg-dark text-light p-2 m-0">
-        {post.postAuthor} <br />
-        <span style={{ fontSize: "1rem" }}>
-          had this post on {post.createdAt}
+        {thought.thoughtAuthor} <br />
+        <span style={{ fontSize: '1rem' }}>
+          had this to chirp about {thought.createdAt}
         </span>
       </h3>
       <div className="bg-light py-4">
