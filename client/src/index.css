@@ -1711,4 +1711,50 @@ label form [type='radio'] {
   }
 }
 
+.login-text {
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+.login-border{
+  border: 5px solid #335867;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 10%;
+  padding-bottom: 5%;
+  border-radius: 10%;
+  background-color: #939598;
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.input-width {
+  width: 450px;
+  height: 50px;
+  margin-left: 19%;
+  margin-bottom: 5%;
+  border: 3px solid #335867
+}
+
+.input-space {
+  padding-top: 15%;
+}
+
+.submit-button {
+  margin-top:5% ;
+  margin-left: 41%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: #cbb26b;
+}
+
+.button-hover:hover {
+  background-color: #335867;
+  cursor: grab;
+}
+
+.test-back {
+  background-color: black;
+}
 
