@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import { LOGIN_USER } from "../../utils/mutations";
+import { ADD_USER } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 
-export default function Login() {
-  const [userFormData, setUserFormData] = useState({ email: "", password: "" });
+export default function Signup() {
+  const [userFormData, setUserFormData] = useState({
+    email: "",
+    password: "",
+    username: "",
+  });
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -14,7 +18,7 @@ export default function Login() {
     event.preventDefault();
 
     try {
-      const response = await LOGIN_USER(userFormData);
+      const response = await ADD_USER(userFormData);
 
       if (!response.ok) {
         throw new Error("something went wrong!");
