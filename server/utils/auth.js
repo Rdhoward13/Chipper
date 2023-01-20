@@ -10,11 +10,12 @@ module.exports = {
     if (req.headers.authorization) {
       token = token.split(" ").pop().trim();
     }
-
+    console.log("rachel in auth middleware");
+    console.log(token);
     if (!token) {
       return req;
     }
-
+    console.log("Rachel in auth middleware");
     try {
       const { data } = jwt.verify(token, secret, { maxAge: expiration });
       req.user = data;

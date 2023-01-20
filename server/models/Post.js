@@ -16,9 +16,12 @@ const postSchema = new Schema({
   },
   createdAt: {
     type: Date,
-    required: true,
-    trim: true,
-    default: Date.now(),
+    default: Date.now,
+    get: (timestamp) => dateFormat(timestamp),
+    // type: Date,
+    // required: true,
+    // trim: true,
+    // default: Date.now(),
   },
   comments: [
     {
