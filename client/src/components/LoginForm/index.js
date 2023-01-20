@@ -17,7 +17,7 @@ export default function Login() {
       const response = await loginUser(userFormData);
 
       if (!response.ok) {
-        throw new Error("something went wrong!");
+        throw new Error("Oh No! Something went sideways...");
       }
 
       const { token, user } = await response.json();

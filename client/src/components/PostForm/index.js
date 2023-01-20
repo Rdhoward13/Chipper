@@ -138,8 +138,8 @@ const PostForm = () => {
   };
 
   return (
-    <div>
-      <h3>What's on your techy mind?</h3>
+    <div color= "#223b45">
+      <h3>Whats got you Chirpping?</h3>
 
       {Auth.loggedIn() ? (
         <>
@@ -157,7 +157,7 @@ const PostForm = () => {
             <div className="col-12 col-lg-9">
               <textarea
                 name="potText"
-                placeholder="Here's a new thought..."
+                placeholder="The latest Chirp..."
                 value={postText}
                 className="form-input w-100"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
@@ -179,8 +179,8 @@ const PostForm = () => {
         </>
       ) : (
         <p>
-          You need to be logged in to share your thoughts. Please{" "}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          You need to be logged in to Chirp, bud. Please{" "}
+          <Link to="/login">Login</Link> or <Link to="/signup">Signup</Link>
         </p>
       )}
     </div>

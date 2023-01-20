@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const PostList = ({ post, title }) => {
   console.log(post);
   if (!post.length) {
-    return <h3>No posts Yet</h3>;
+    return <h3>No Chirps Yet</h3>;
   }
 
   return (
@@ -17,7 +17,7 @@ const PostList = ({ post, title }) => {
             <h4 className="card-header bg-primary text-light p-2 m-0">
               {posts.postAuthor} <br />
               <span style={{ fontSize: "1rem" }}>
-                had this post on {posts.createdAt}
+                had this Chirp on {posts.createdAt}
               </span>
             </h4>
             <div className="card-body bg-light p-2">
@@ -28,7 +28,7 @@ const PostList = ({ post, title }) => {
               className="btn btn-primary btn-block btn-squared"
               to={`/posts/${posts._id}`}
             >
-              Join the discussion on this post.
+              Join the discussion!
             </Link>
           </div>
         ))}
