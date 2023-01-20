@@ -60,7 +60,7 @@ const PostForm = () => {
   };
 
   return (
-    <div>
+    <div className="text-center border border-warning p-5">
       <h3>Get to Chirping!</h3>
       {Auth.loggedIn() ? (
         <>
@@ -87,7 +87,7 @@ const PostForm = () => {
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+              <button className="btn btn-warning btn-block py-3" type="submit">
                 Add Post
               </button>
             </div>
