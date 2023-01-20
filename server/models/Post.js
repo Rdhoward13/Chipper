@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 
+
 const postSchema = new Schema({
   postText: {
     type: String,
@@ -17,6 +18,7 @@ const postSchema = new Schema({
     type: Date,
     required: true,
     trim: true,
+    default: Date.now(),
   },
   comments: [
     {

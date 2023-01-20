@@ -2,6 +2,7 @@ const db = require("../config/connection");
 const { User, Post } = require("../models");
 const userSeeds = require("./userSeeds.json");
 const postSeeds = require("./postSeeds.json");
+const jwt = require('jsonwebtoken');
 
 db.once("open", async () => {
   try {
