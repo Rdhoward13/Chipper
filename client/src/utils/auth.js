@@ -1,4 +1,4 @@
-import decode from 'jwt-decode';
+import decode from "jwt-decode";
 
 class Auth {
   // retrieve data saved in token
@@ -31,23 +31,23 @@ class Auth {
   // retrieve token from localStorage
   getToken() {
     // retrieves the user token from localStorage
-    return localStorage.getItem('id_token');
+    return localStorage.getItem("id_token");
   }
 
   // set token to localStorage and reload page to homepage
   login(idToken) {
     // saves user token to localStorage
-    localStorage.setItem('id_token', idToken);
+    localStorage.setItem("id_token", idToken);
 
-    window.location.assign('/');
+    window.location.assign("/");
   }
 
   // clear token from localStorage and force logout with reload
   logout() {
     // clear user token and profile data from localStorage
-    localStorage.removeItem('id_token');
+    localStorage.removeItem("id_token");
     // this will reload the page and reset the state of the app
-    window.location.assign('/');
+    window.location.assign("/");
   }
 }
 
