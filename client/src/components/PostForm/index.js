@@ -33,84 +33,6 @@ const PostForm = () => {
     },
   });
 
-  // const PostForm = () => {
-  //   const [postText, setPostText] = useState('');
-  //   const [formState, setFormState] = useState({
-  //     postText: "",
-  //     postAuthor: "",
-  //   });
-  //   const [characterCount, setCharacterCount] = useState(0);
-
-  // const [addPost, { error }] = useMutation(ADD_POST, {
-  //   update(cache, { data: { addPost } }) {
-  //     try {
-  //       const { posts } = cache.readQuery({ query: QUERY_POST });
-
-  //       cache.writeQuery({
-  //         query: QUERY_POST,
-  //         data: { posts [addPost, ...posts] },
-  //       });
-  //     } catch (e) {
-  //       console.error(e);
-  //     }
-
-  //     // update me object's cache
-  //     const { me } = cache.readQuery({ query: QUERY_ME });
-  //     cache.writeQuery({
-  //       query: QUERY_ME,
-  //       data: { me: { ...me, posts: [...me.post, addPost] } },
-  //     });
-  //   },
-  // });
-
-  // const [addPost, { error }] = useMutation(ADD_POST, {
-  //   update(cache, { data: { addPOST } }) {
-  //     try {
-  //       const { posts } = cache.readQuery({ query: QUERY_ME });
-
-  //       cache.writeQuery({
-  //         query: QUERY_ME,
-  //         data: { me: { ...me, posts: [...me.post, addPost] } },
-  //     })
-
-  // const handleFormSubmit = async (event) => {
-  //   event.preventDefault();
-
-  //   try {
-  //     const { data } = await addPost({
-  //       variables: {
-  //         postText,
-  //         postAuthor: Auth.getProfile().data.username,
-  //       },
-  //     });
-
-  //     setPostText('');
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
-
-  //   try {
-  //     const { data } = await addPost({
-  //       variables: { ...formState },
-  //     });
-
-  //     setFormState({
-  //       postText: "",
-  //       postAuthor: "",
-  //     });
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
-
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
-  //   if (name === "postText" && value.length <= 280) {
-  //     setPostText(value);
-  //     setCharacterCount(value.length);
-  //   }
-  // };
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -138,9 +60,10 @@ const PostForm = () => {
   };
 
   return (
-    <div color= "#223b45">
-      <h3>Whats got you Chirpping?</h3>
 
+    <div color= "#223b45">
+      <h3>Get to Chirping!</h3>
+ {/* e3653a84a51087eefac50ece4f8d100f090833fd */}
       {Auth.loggedIn() ? (
         <>
           <p
@@ -156,8 +79,11 @@ const PostForm = () => {
           >
             <div className="col-12 col-lg-9">
               <textarea
-                name="potText"
+                name="postText"
                 placeholder="The latest Chirp..."
+
+                
+/* >>>>>>> e3653a84a51087eefac50ece4f8d100f090833fd */
                 value={postText}
                 className="form-input w-100"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
@@ -179,73 +105,17 @@ const PostForm = () => {
         </>
       ) : (
         <p>
+
           You need to be logged in to Chirp, bud. Please{" "}
           <Link to="/login">Login</Link> or <Link to="/signup">Signup</Link>
+
+          You need to be logged in to share your chirps. Please{" "}
+          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+{/*  e3653a84a51087eefac50ece4f8d100f090833fd */}
         </p>
       )}
     </div>
   );
 };
 
-export default PostForm;
-
-//   if (name === "postText" && value.length <= 280) {
-//     setFormState({ ...formState, [name]: value });
-//     setCharacterCount(value.length);
-//   } else if (name !== "postText") {
-//     setFormState({ ...formState, [name]: value });
-//   }
-// };
-
-//   return (
-//     <div>
-//       <h3>What's on your techy mind?</h3>
-
-//       <p
-//         className={`m-0 ${
-//           characterCount === 280 || error ? "text-danger" : ""
-//         }`}
-//       >
-//         Character Count: {characterCount}/280
-//         {error && <span className="ml-2">Something went wrong...</span>}
-//       </p>
-//       <form
-//         className="flex-row justify-center justify-space-between-md align-center"
-//         onSubmit={handleFormSubmit}
-//       >
-//         <div className="col-12">
-//           <textarea
-//             name="postText"
-//             placeholder="Here's a new thought..."
-//             value={formState.postText}
-//             className="form-input w-100"
-//             style={{ lineHeight: "1.5" }}
-//             onChange={handleChange}
-//           ></textarea>
-//         </div>
-//         <div className="col-12 col-lg-9">
-//           <input
-//             name="postAuthor"
-//             placeholder="Add your name to get credit for the thought..."
-//             value={formState.postAuthor}
-//             className="form-input w-100"
-//             onChange={handleChange}
-//           />
-//         </div>
-
-//         <div className="col-12 col-lg-3">
-//           <button className="btn btn-primary btn-block py-3" type="submit">
-//             Add Post
-//           </button>
-//         </div>
-//         {error && (
-//           <div className="col-12 my-3 bg-danger text-white p-3">
-//             Something went wrong...
-//           </div>
-//         )}
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default PostForm;
+export default PostForm
