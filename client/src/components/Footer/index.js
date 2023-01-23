@@ -5,25 +5,19 @@ const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
   return (
-    <footer className="w-100 mt-auto bg-secondary p-4">
+    <footer className="w-100 mt-auto bg-warning p-4">
       <div className="container text-center mb-5">
         {location.pathname !== "/" && (
           <button className="btn btn-dark mb-3" onClick={() => navigate(-1)}>
             &larr; Go Back
           </button>
         )}
-        <h4>
-          Made with{" "}
-          <span
-            className="emoji"
-            role="img"
-            aria-label="heart"
-            aria-hidden="false"
-          >
-            ❤️
-          </span>{" "}
-          by the Chirper team.
-        </h4>
+        <img
+          className="ml-5"
+          src="./images/Chirper_logo.jpg"
+          alt="full logo"
+          height="175"
+        ></img>
       </div>
     </footer>
   );
