@@ -61,7 +61,7 @@ const PostForm = () => {
 
   return (
     <div className="text-center border border-warning p-5">
-      <h3>Let's Chirp!</h3>
+      <h2> Let's Chirp! </h2>
       {Auth.loggedIn() ? (
         <>
           <p

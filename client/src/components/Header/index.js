@@ -22,75 +22,22 @@ const Header = () => {
           </Link>
         </div>
         <h2 className="m-0">Chirp Through Life's Connections.</h2>
-
-        {/* <ul>
-          {Auth.loggedIn() ? (
-            <>
-              <>
-                <Link className="btn btn-lg btn-info m-2" to="/me">
-                  {Auth.getProfile().data.username}'s profile
-                </Link>
-                <button className="btn btn-lg btn-light m-2" onClick={logout}>
-                  Logout
-                </button>
-              </>
-              {/* <li>
-                                      <Link to='myaccount' className='nav-link scrollto'>
-                                          My Account
-                                      </Link>
-                                  </li> */}
-        {/* <li>
-                <Link
-                  to="/"
-                  className="nav-link scrollto text-muted"
-                  onClick={Auth.logout}
-                >
-                  Logout
-                </Link>
-              </li>
-            </>
-          ) : (
-            <>
-              <ul className="navbar-nav d-inline" list-style="none">
-                <li className="nav-item">
-                  <Link
-                    to="signup"
-                    className="nav-link scrollto text-muted mr-2"
-                  >
-                    Sign Up
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="login" className="nav-link scrollto text-muted">
-                    Login
-                  </Link>
-                </li>
-              </ul>
-            </>
-          )}
-        </ul>
-      </div>
-    </header>
-  );
-};
-
-export default Header; */}
         <div>
           {Auth.loggedIn() ? (
             <>
-              <Link className="btn btn-lg btn-dark m-2" to="/me">
+              <Link className="btn btn-lg btn-secondary m-2" to="/me">
                 {Auth.getProfile().data.username}'s profile
               </Link>
-              <button className="btn btn-lg btn-dark m-2" onClick={logout}>
+              <button className="btn btn-lg btn-secondary m-2" onClick={logout}>
                 Logout
               </button>
             </>
           ) : (
             <>
-              <Link className="btn btn-lg btn-dark m-2" to="/login">
+              <Link className="btn btn-lg btn-secondary m-2" to="/login">
                 Login
               </Link>
-              <Link className="btn btn-lg btn-dark m-2" to="/signup">
+              <Link className="btn btn-lg btn-secondary m-2" to="/signup">
                 Signup
               </Link>
             </>

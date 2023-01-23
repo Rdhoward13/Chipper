@@ -12,9 +12,12 @@ const PostList = ({ posts, title, showTitle = true, showUsername = true }) => {
       {posts &&
         posts.map((post) => (
           <div key={post._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
+            <h4 className="card-header bg-secondary text-light p-2 m-0">
               {showUsername ? (
-                <Link className="text-dark" to={`/profiles/${post.postAuthor}`}>
+                <Link
+                  className="text-white"
+                  to={`/profiles/${post.postAuthor}`}
+                >
                   {post.postAuthor} <br />
                   <span style={{ fontSize: "1rem" }}>
                     had this chirp on {post.createdAt}
@@ -32,7 +35,7 @@ const PostList = ({ posts, title, showTitle = true, showUsername = true }) => {
               <p>{post.postText}</p>
             </div>
             <Link
-              className="btn btn-primary btn-block btn-squared"
+              className="btn btn-warning btn-block btn-squared"
               to={`/posts/${post._id}`}
             >
               Add your comment
