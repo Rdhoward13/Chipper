@@ -60,8 +60,8 @@ const PostForm = () => {
   };
 
   return (
-    <div className="text-center border border-warning p-5">
-      <h2> Let's Chirp! </h2>
+    <div className="text-center border border-warning p-5 ">
+      <h2> Let's get to Chirping! </h2>
       {Auth.loggedIn() ? (
         <>
           <p
@@ -78,7 +78,7 @@ const PostForm = () => {
             <div className="col-12 col-lg-9">
               <textarea
                 name="postText"
-                placeholder="Here's a new chirp..."
+                placeholder="Start your chirp..."
                 value={postText}
                 className="form-input w-100"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
@@ -87,7 +87,10 @@ const PostForm = () => {
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-warning btn-block py-3" type="submit">
+              <button
+                className="btn btn-warning btn-rounded py-3"
+                type="submit"
+              >
                 Add Post
               </button>
             </div>
@@ -100,8 +103,7 @@ const PostForm = () => {
         </>
       ) : (
         <p>
-          You need to be logged in to share your chirps. Please{" "}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          <Link to="/login">Login</Link> or <Link to="/signup">Signup.</Link>
         </p>
       )}
     </div>
