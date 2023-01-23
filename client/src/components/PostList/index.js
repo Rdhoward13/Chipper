@@ -33,7 +33,7 @@ const PostList = ({ posts, title, showTitle = true, showUsername = true }) => {
             </div>
             <Link
               className="btn btn-primary btn-block btn-squared"
-              to={`/post/${post._id}`}
+              to={`/posts/${post._id}`}
             >
               Add your comment
             </Link>

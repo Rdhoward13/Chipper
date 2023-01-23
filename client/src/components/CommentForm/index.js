@@ -41,7 +41,7 @@ const CommentForm = ({ postId }) => {
 
   return (
     <div>
-      <h4>What are your thoughts on this chirp?</h4>
+      <h4>What cha wanna say?</h4>
 
       {Auth.loggedIn() ? (
         <>
