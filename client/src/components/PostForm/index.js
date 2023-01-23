@@ -25,11 +25,11 @@ const PostForm = () => {
       }
 
       // update me object's cache
-      const { me } = cache.readQuery({ query: QUERY_ME });
-      cache.writeQuery({
-        query: QUERY_ME,
-        data: { me: { ...me, posts: [...me.posts, addPost] } },
-      });
+      // const { me } = cache.readQuery({ query: QUERY_ME });
+      // cache.writeQuery({
+      //   query: QUERY_ME,
+      //   data: { me: { ...me, posts: [...me.posts, addPost] } },
+      // });
     },
   });
 
@@ -61,7 +61,7 @@ const PostForm = () => {
 
   return (
     <div className="text-center border border-warning p-5">
-      <h3>Get to Chirping!</h3>
+      <h3>Let's Chirp!</h3>
       {Auth.loggedIn() ? (
         <>
           <p
