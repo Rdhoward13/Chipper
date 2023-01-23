@@ -8,21 +8,19 @@ import { QUERY_POSTS } from "../utils/queries";
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_POSTS);
-  const post = data?.post || [];
+  const posts = data?.posts || [];
 
   return (
     <main>
       <div className="flex-row justify-center">
-        <div
-          className="col-12 col-md-12 mb-3 p-3"
-        >
+        <div className="col-12 col-md-12 mb-3 p-3">
           <PostForm />
         </div>
         <div className="col-12 col-md-8 mb-3">
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <PostList post={post} title="Some Feed for Thought(s)..." />
+            <PostList posts={posts} title="Check out the latest Chirps!" />
           )}
         </div>
       </div>

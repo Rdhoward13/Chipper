@@ -36,6 +36,7 @@ export const QUERY_SINGLE_POST = gql`
       comments {
         _id
         commentText
+        commentAuthor
         createdAt
       }
     }

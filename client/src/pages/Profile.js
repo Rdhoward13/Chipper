@@ -3,12 +3,12 @@ import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
-import PostForm from "../../components/PostForm";
-import PostList from "../../components/PostList";
+import PostForm from "../components/PostForm";
+import PostList from "../components/PostList";
 
-import { QUERY_USER, QUERY_ME } from "../../utils/queries";
+import { QUERY_USER, QUERY_ME } from "../utils/queries";
 
-import Auth from "../../utils/auth";
+import Auth from "../utils/auth";
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -45,8 +45,8 @@ const Profile = () => {
 
         <div className="col-12 col-md-10 mb-5">
           <PostList
-            thoughts={user.thoughts}
-            title={`${user.username}'s thoughts...`}
+            posts={user.posts}
+            title={`${user.username}'s posts...`}
             showTitle={false}
             showUsername={false}
           />
